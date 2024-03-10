@@ -24,7 +24,7 @@ class FreqaiModelResolver(IResolver):
     object_type_str = "FreqaiModel"
     user_subdir = USERPATH_FREQAIMODELS
     initial_search_path = (
-        Path(__file__).parent.parent.joinpath("freqai/prediction_models").resolve()
+        Path(__file__).parent.parent.joinpath("freqtrade/freqai/prediction_models").resolve()
     )
     extra_path = "freqaimodel_path"
 

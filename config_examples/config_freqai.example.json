@@ -7,9 +7,10 @@
     "tradable_balance_ratio": 1,
     "fiat_display_currency": "USD",
     "dry_run": true,
-    "timeframe": "3m",
+    "timeframe": "5m",
     "dry_run_wallet": 1000,
     "cancel_open_orders_on_exit": true,
+    "freqaimodel_path": "freqtrade/freqai/prediction_models",
     "unfilledtimeout": {
         "entry": 10,
         "exit": 30
@@ -55,7 +56,7 @@
         "identifier": "unique-id",
         "feature_parameters": {
             "include_timeframes": [
-                "3m",
+                "5m",
                 "15m",
                 "1h"
             ],

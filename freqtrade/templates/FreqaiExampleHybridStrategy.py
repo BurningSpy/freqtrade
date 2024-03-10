@@ -13,7 +13,7 @@ from freqtrade.strategy import IntParameter, IStrategy, merge_informative_pair  
 logger = logging.getLogger(__name__)
 
 
-class FreqaiExampleHybridStrategy(IStrategy):
+class FreqaiExampleHybridStrategyOLD(IStrategy):
     """
     Example of a hybrid FreqAI strat, designed to illustrate how a user may employ
     FreqAI to bolster a typical Freqtrade strategy.
