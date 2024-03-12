@@ -27,6 +27,11 @@
         ],
         "pair_blacklist": []
     },
+    "telegram": {
+        "enabled": true,
+        "token": "2138305348:AAHVCnycKYtwQNoo1ozmEE65RyyUGSk8Ks8",
+        "chat_id": "-960058214"
+    },
     "entry_pricing": {
         "price_side": "same",
         "use_order_book": true,
