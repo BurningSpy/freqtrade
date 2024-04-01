@@ -9,7 +9,7 @@ from datetime import datetime
 from typing import Optional, Union
 
 from freqtrade.strategy import (BooleanParameter, CategoricalParameter, DecimalParameter,
-                                IntParameter, IStrategy, merge_informative_pair)
+                                IntParameter, IStrategy, merge_informative_pair,RealParameter)
 
 # --------------------------------
 # Add your lib to import here
@@ -79,13 +79,13 @@ class WilliamVixFixStrategy(IStrategy):
     sell_rsi = IntParameter(60, 90, default=70, space="sell")
     
     # Williams Vix Fix and Bollinger Bands settings
-    pd = 22
-    bbl = 20
-    mult = 2.0
-    lb = 50
-    ph = 0.85
-    pl = 1.01
-    bHighs = False
+    pd = IntParameter(10, 40, default=22, space="buy")
+    bbl = IntParameter(10, 40, default=20, space="buy")
+    mult = RealParameter(1.0, 3.0, default=2.0, space="buy")
+    lb = IntParameter(10, 100, default=50, space="buy")
+    ph = RealParameter(0.5, 1.0, default=0.85, space="buy")
+    pl = RealParameter(1.0, 1.5, default=1.01, space="buy")
+    bHighs = CategoricalParameter([True, False], default=False, space="buy")
     
     # Optional order type mapping.
     order_types = {
@@ -168,7 +168,7 @@ class WilliamVixFixStrategy(IStrategy):
         dataframe['upperBand'] = dataframe['midLine'] + dataframe['sDev']
         dataframe['lowerBand'] = dataframe['midLine'] - dataframe['sDev']
 
-            
+        # # Bollinger Bandwidth
         # ADX
         dataframe['adx'] = ta.ADX(dataframe)
 
